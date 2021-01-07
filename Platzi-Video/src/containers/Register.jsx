@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import '../assets/styles/components/Login.scss';
+import '../assets/styles/components/Register.scss';
+import GoogleImage from '../assets/static/google-icon.png';
+import TwiterImage from '../assets/static/twitter-icon.png';
 
 const Register = () => (
   <section className='register'>
@@ -19,11 +21,11 @@ const Register = () => (
 
       <section className='register__continer--social-media'>
         <div>
-          <img src='../assets/google-icon.png' alt='Google' />
+          <img src={GoogleImage} alt='Google' />
           Registrarme con google
         </div>
         <div>
-          <img src='../assets/twitter-icon.png' alt='Twitter' />
+          <img src={TwiterImage} alt='Twitter' />
           Registrarme con Twitter
         </div>
       </section>
