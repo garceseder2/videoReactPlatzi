@@ -11,7 +11,7 @@ const App = () => (
       <Route exact path='/' component={Home} />
       <Route exact path='/Login' component={Login} />
       <Route exact path='/Register' component={Register} />
-      <Route exact path='/NotFount' component={NotFount} />
+      <Route component={NotFount} />
     </Switch>
   </BrowserRouter>
 );
