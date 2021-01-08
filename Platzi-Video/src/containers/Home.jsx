@@ -12,13 +12,14 @@ import Item from '../components/Item';
 //const API = 'http://localhost:3000/initalState';
 const Home = ({ mylist, trends, originals }) => {
   //const initalState = useInitialState(API);
+  console.log(Home);
   return (
     <>
       <Search />
       {mylist?.length > 0 && (
         <Categories title='Mi lista'>
           <Carrousel>
-            <Item />
+            {mylist?.map((item) => <Item key={item.id} {...item} />)}
           </Carrousel>
         </Categories>
       )}
