@@ -12,7 +12,7 @@ import Item from '../components/Item';
 //const API = 'http://localhost:3000/initalState';
 const Home = ({ mylist, trends, originals }) => {
   //const initalState = useInitialState(API);
-  console.log(Home);
+
   return (
     <>
       <Search />
