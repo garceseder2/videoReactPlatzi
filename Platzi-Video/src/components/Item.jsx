@@ -8,26 +8,26 @@ import Plus from '../assets/static/baseline_add_circle_white_18dp.png';
 import Delete from '../assets/static/baseline_delete_white_18dp.png';
 
 const Item = (props) => {
-  const { id, cover, title, year, contentRating, duration } = props;
+  console.log(props);
+  const { id, cover, title, year, contentRating, duration, isList } = props;
   const handleSetFavorite = () => {
     props.setFavorite({
-      id, cover, title, year, contentRating, duration,
+      id, cover, title, year, contentRating, duration, isList,
     });
   };
-
   const handleDeleteFavorite = (itemId) => {
-
     props.deleteFavorite(itemId);
   };
-
   return (
     <div className='carousel-item'>
       <img className='carousel-item__img' src={cover} alt={title} />
       <div className='carousel-item__details'>
         <div>
           <img src={Play} alt='Play' />
-          <img src={Plus} alt='Plus' onClick={handleSetFavorite} />
-          <img src={Delete} alt='Delete' onClick={() => handleDeleteFavorite(id)} />
+          { !isList && <img src={Plus} alt='Plus' onClick={handleSetFavorite} />}
+
+          { isList && <img src={Delete} alt='Delete' onClick={() => handleDeleteFavorite(id)} />}
+
         </div>
         <p className='carousel-item__details--title'>{title}</p>
         <p className='carousel-item__details--subtitle'>{`${year} ${contentRating} ${duration}`}</p>
