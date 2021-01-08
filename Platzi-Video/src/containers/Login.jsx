@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GoogleImage from '../assets/static/google-icon.png';
 import TwiterImage from '../assets/static/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
@@ -33,7 +34,8 @@ const Login = () => (
       </section>
       <p className='login__continer--register'>
         No tienes cuenta
-        <a href='/'>Registrate</a>
+        {' '}
+        <Link to='/Register'>Registrate</Link>
       </p>
 
     </div>

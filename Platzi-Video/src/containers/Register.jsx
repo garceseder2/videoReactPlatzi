@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Register.scss';
 import GoogleImage from '../assets/static/google-icon.png';
 import TwiterImage from '../assets/static/twitter-icon.png';
@@ -15,7 +16,7 @@ const Register = () => (
         <input className='input' type='password' placeholder='Confirma contraseña' />
         <button className='button' type='button'>Registrarme</button>
         <div className='register__continer--rememnber-me'>
-          <a href='/'>Iniciar Sesion</a>
+          <Link to='/Login'>Iniciar Sesion</Link>
         </div>
       </form>
 
