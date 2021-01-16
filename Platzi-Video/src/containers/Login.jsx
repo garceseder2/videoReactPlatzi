@@ -16,13 +16,12 @@ const Login = (props) => {
   const handleInput = (event) => {
     setValues({
       ...form,
-      [event.target.name]: event.target.name,
+      [event.target.name]: event.target.value,
     });
   };
   //envia la informacion
   const handleSummit = (event) => {
     event.preventDefault();
-    console.log(props);
     props.loginRequest(form);
     props.history.push('/');
   };
