@@ -8,7 +8,6 @@ import Plus from '../assets/static/baseline_add_circle_white_18dp.png';
 import Delete from '../assets/static/baseline_delete_white_18dp.png';
 
 const Item = (props) => {
-  console.log(props);
   const { id, cover, title, year, contentRating, duration, isList } = props;
   const handleSetFavorite = () => {
     props.setFavorite({

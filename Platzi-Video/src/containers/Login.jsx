@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginRequest } from '../actions';
 import GoogleImage from '../assets/static/google-icon.png';
 import TwiterImage from '../assets/static/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
 
-const Login = () => {
+const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
   });
@@ -20,7 +22,9 @@ const Login = () => {
   //envia la informacion
   const handleSummit = (event) => {
     event.preventDefault();
-    console.log(form);
+    console.log(props);
+    props.loginRequest(form);
+    props.history.push('/');
   };
 
   return (
@@ -61,4 +65,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
