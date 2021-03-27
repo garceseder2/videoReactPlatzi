@@ -23,6 +23,13 @@ const reducer = (state, action) => {
         user: action.payload,
       };
 
+    case 'REGISTER_REQUEST':
+      debugger;
+      return {
+        ...state,
+        user: action.payload,
+      };
+
     default:
       return state;
 

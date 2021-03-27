@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import '../assets/styles/components/Register.scss';
 import GoogleImage from '../assets/static/google-icon.png';
 import TwiterImage from '../assets/static/twitter-icon.png';
+import { registerRequest } from '../actions';
 
-const Register = () => {
+const Register = (props) => {
 
   const [form, setValues] = useState({
     email: '',
@@ -22,7 +24,9 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.registerRequest(form);
+    props.history.push('/');
+    //console.log(form);
   };
 
   return (
@@ -55,4 +59,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapDispatchToProps = {
+  registerRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Register);
