@@ -24,12 +24,16 @@ const reducer = (state, action) => {
       };
 
     case 'REGISTER_REQUEST':
-      debugger;
       return {
         ...state,
         user: action.payload,
       };
 
+    case 'GET_VIDEO_SOURCE':
+      return {
+        ...state,
+        playing: state.trends.find((item) => item.id === Number(action.payload)) || state.originals.find((item) => item.id === Number(action.payload)) || [],
+      };
     default:
       return state;
 

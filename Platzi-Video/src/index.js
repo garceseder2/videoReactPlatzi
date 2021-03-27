@@ -7,7 +7,7 @@ import reducer from './reducers';
 
 const initalState = {
   'user': {},
-  'paying': {},
+  'playing': {},
   'mylist': [],
   'trends': [
     {
@@ -21,7 +21,7 @@ const initalState = {
       'duration': 164,
       'cover': 'http://dummyimage.com/800x600.png/99118E/ffffff',
       'description': 'Vestibulum ac est lacinia nisi venenatis tristique',
-      'source': 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
+      'source': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     },
     {
       'id': 3,
@@ -89,7 +89,7 @@ const initalState = {
       'source': 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
   ],
-  'originals': [
+  'original': [
     {
       'id': 8,
       'slug': 'tvshow-8',
